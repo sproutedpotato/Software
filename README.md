@@ -3,6 +3,7 @@
 ----------------
 
 This is an GameManager created during the first semester of 24.
+
 It focused on reuse and scalabilitys, and I wrote it using C#.
 
 24년도 1학기에 만든 GameManager입니다.
