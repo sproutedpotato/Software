@@ -10,7 +10,7 @@ It focused on reuse and scalabilitys, and I wrote it using C#.
 
 재사용성과 확장성에 집중하였으며, C#으로 작성하였습니다.
 
-master분기에 코드가 있습니다.
+Visual Studio 2022로 작업하였습니다.
 
 ----------------
 
