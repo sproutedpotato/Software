@@ -1,10 +1,14 @@
-﻿interface FMonster
+﻿public interface FMonster
 {
-    void Attack();
-    void Walk(ConsoleKeyInfo key);
-    void Skill();
-    void Defense();
-    void State();
-    void Death();
-    void Create();
+    int Attack();
+    int Skill();
+    void Defense(int damage);
+    string State();
+    bool Death();
+    int GetHp(int num = 0, string s = "");
+    int GetScore();
+    string GetState();
+    void SetState(string s);
+    string MonsterKind();
+    string GetDropItem();
 }
