@@ -1,20 +1,17 @@
 ﻿class MapManager
 {
-    private string[,] map = 
-        { { "┌", "┬", "┐" }, 
-          { "├", "┼", "┤" }, 
-          { "│", "│", "│"},
-          { "└", "┴", "┘"} };
-
+    private string[,] map;
     private Position exit;
 
     public MapManager()
     {
         map = new string[,]
-        { { "┌", "┬", "┐" },
-          { "├", "┼", "┤" },
-          { "│", "│", "│"},
-          { "└", "┴", "┘"} };
+        { { "┌", "┬", "┐", "┌", "┬", "┐" },
+          { "├", "┼", "┼", "┼", "┼", "┤" },
+          { "├", "┼", "┼", "┼", "┼", "┤" },
+          { "├", "┼", "┼", "┼", "┼", "┤" },
+          { "├", "┼", "┼", "┼", "┼", "┤" },
+          { "└", "┴", "┘", "└", "┴", "┘" } };
         int row = map.GetLength(0);
         int col = map.GetLength(1);
         exit = new Position(col - 1, row - 1);
