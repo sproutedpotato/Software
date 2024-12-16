@@ -54,9 +54,6 @@
                 }
             }
         }
-        
-
-        
 
         mapManager = new MapManager();
         map = mapManager.GetMap();
