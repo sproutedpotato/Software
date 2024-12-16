@@ -9,19 +9,9 @@
         this.y = y;
     }
 
-    public int GetPosition_X()
+    public static bool ComparePosition(Position pos1, Position pos2) 
     {
-        return x;
-    }
-
-    public int GetPosition_Y()
-    {
-        return y;
-    }
-
-    public void SetPosition(int x, int y)
-    {
-        this.x = x;
-        this.y = y;
+        if (pos2.x == pos1.x && pos1.y == pos2.y) return true;
+        else return false;
     }
 }
