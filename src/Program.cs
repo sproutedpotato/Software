@@ -9,7 +9,7 @@
         int score;
 
         List<string> inventory;
-        Position userPos, prev;
+        Position userPos;
         InitManager init;
         MapManager mapManager;
         GameManager gameManager;
@@ -23,33 +23,40 @@
         FTreasure trueTreasure, fakeTreasure;
         FUserItem healingpotion, manapotion, clearpotion, hiderobe, adropine;
 
+        init = InitManager.GetInstance();
+
         while (true)
         {
-            Console.WriteLine("시작하려는 게임의 태그와 상태를 공백으로 구분해 입력해 주세요 : {tag status}")
-; input = Console.ReadLine();
+            Console.WriteLine("시작하려는 게임의 태그와 상태를 공백으로 구분해 입력해 주세요 : {tag status}"); 
+            input = Console.ReadLine();
             inputs = input.Split();
+            inputs[1] = inputs[1].ToLower();
+            bool.TryParse(inputs[1], out condition);
 
             if (inputs.Length != 2) { Console.WriteLine("Error input. restart the program"); }
             else
             {
-                if (string.Equals("true", inputs[1], StringComparison.OrdinalIgnoreCase) || string.Equals("false", inputs[1], StringComparison.OrdinalIgnoreCase))
+                if (string.Equals("true", inputs[1], StringComparison.OrdinalIgnoreCase))
                 {
+                    Console.Clear();
+                    init.DectetCondition(inputs[0], condition);
                     break;
+                }
+                else if (string.Equals("false", inputs[1], StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.Clear();
+                    init.DectetCondition(inputs[0], condition);
                 }
                 else
                 {
+                    Console.Clear();
                     Console.WriteLine("Condition input Error. Please Retry : true or false");
                 }
             }
-
-
         }
-        Console.Clear();
+        
 
-        inputs[1] = inputs[1].ToLower();
-        bool.TryParse(inputs[1], out condition);
-        init = InitManager.GetInstance();
-        init.DectetCondition(inputs[0], condition);
+        
 
         mapManager = new MapManager();
         map = mapManager.GetMap();
